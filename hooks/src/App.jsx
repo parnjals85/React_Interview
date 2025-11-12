@@ -3,7 +3,7 @@ import './pranjal.css'
 
 
 function App() {
-  const [counter , SetCounter] = useState(15);
+  {/*const [counter , SetCounter] = useState(15);
 
   const addvalue = ()=>{
     if(counter <= 19){
@@ -15,11 +15,24 @@ function App() {
     if(counter >=1){
       SetCounter(counter -1)
       }
-  }
+  }*/
+
+      const [color , setColor] = useState(function color2(){
+        document.body.style.background = 'pink';
+      })
    
+      const colorchanger = (newcolor) =>{
+           setColor(color)
+      }
+
+
+
+
+
+    }
   return (
    <>
-    {/* More Logic -- like -- number on tab+ not exceed more than 20 and in remove button not come to Minus */}
+    {/* More Logic -- like -- number on tab+ not exceed more than 20 and in remove button not come to Minus 
     <h1>Welcome To My New Project</h1>
     <h2>Counter App {counter}</h2>
     <button onClick={addvalue}>
@@ -27,7 +40,8 @@ function App() {
     </button>
     <button onClick={removevalue}>
       Removing {counter}
-    </button>
+    </button>*/}
+        <button onClick={() => colorchanger("red")}>Red</button>
 
 </>
   )
