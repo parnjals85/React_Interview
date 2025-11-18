@@ -1,16 +1,59 @@
-# React + Vite
+# 🌍 Currency Converter App  
+A modern, fast, and responsive **Currency Converter** built using **React**, **Custom Hooks**, and **Tailwind CSS**.  
+This app converts any currency to another using real-time exchange rates from the **Fawaz Currency API**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔁 Convert one currency to another  
+- 🌐 Real-time exchange rates  
+- ↕️ Swap between "From" and "To" currencies  
+- ♻️ Fully reusable `InputBox` component  
+- 🎣 Custom Hook for API calls  
+- 🎨 Beautiful UI with Glassmorphism  
+- 📱 100% Responsive design  
+- ⚡ Fast, lightweight and clean architecture  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js**
+- **Tailwind CSS**
+- **Custom Hooks**
+- **Fawaz Currency API**
+- **Vite** (if you're using it)
+- **JavaScript (ES6)**
+
+---
+
+## 📂 Folder Structure
+
+```bash
+src/
+│── components/
+│     └── InputBox.jsx
+│
+│── Hooks/
+│     └── usecurrencyInfo.js
+│
+│── App.jsx
+│── main.jsx
+│── index.css
+
+# Clone the project
+git clone https://github.com/<your-username>/currency-converter.git
+
+# Go to project folder
+cd currency-converter
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+
