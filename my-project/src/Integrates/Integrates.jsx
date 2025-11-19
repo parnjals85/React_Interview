@@ -11,32 +11,39 @@ export default function Integrates() {
 
   const fetchData = async () => {
     setLoading(true);
-    setError(""); 
+    setError("");
+
     try {
       const res = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
 
+      if (!res.ok) throw new Error("API is not responding");
+
       const data = await res.json();
+
       if (!data.meals) {
-        setError("Not Found!!");
         setItems([]);
+        setError("⚠️ No results found!");
       } else {
         setItems(data.meals);
       }
     } catch (err) {
       console.error(err);
-      setError("Something went wrong. Please try again.");
+      setError("❌ Something went wrong!");
     }
+
     setLoading(false);
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (query.trim() !== "") fetchData();
+  }, [query]);
 
   return (
     <div className="w-full min-h-screen px-6 py-10 bg-gradient-to-r from-yellow-50 to-orange-110">
+      
+      {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,7 +86,7 @@ export default function Integrates() {
                 className="px-3 py-1 text-sm cursor-pointer bg-purple-100 
                 text-purple-700 rounded-full border border-purple-300 
                 hover:bg-purple-200"
-                onClick={() => setQuery(s.toLowerCase())}
+                onClick={() => setQuery(s.toLowerCase())}  // Auto fetch will handle it
               >
                 {s}
               </motion.span>
@@ -87,11 +94,13 @@ export default function Integrates() {
           )}
         </div>
       </motion.div>
+
+      {/* Error Message */}
       {error && (
         <div
           className="text-center mb-6 text-red-700 font-semibold 
-bg-red-50 border border-red-200 shadow-md shadow-red-100 
-py-3 px-4 rounded-2xl backdrop-blur-sm"
+          bg-red-50 border border-red-200 shadow-md shadow-red-100 
+          py-3 px-4 rounded-2xl backdrop-blur-sm"
         >
           {error}
         </div>
@@ -110,7 +119,8 @@ py-3 px-4 rounded-2xl backdrop-blur-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white p-5 rounded-2xl shadow hover:shadow-lg transition cursor-pointer"
+              className="bg-white p-5 rounded-2xl shadow hover:shadow-lg 
+              transition cursor-pointer"
               onClick={() => navigate(`/meal/${meal.idMeal}`)}
             >
               <img
@@ -118,6 +128,7 @@ py-3 px-4 rounded-2xl backdrop-blur-sm"
                 alt={meal.strMeal}
                 className="rounded-xl w-full h-48 object-cover mb-4"
               />
+
               <h2 className="text-xl font-bold text-gray-800 mb-2">
                 {meal.strMeal}
               </h2>
