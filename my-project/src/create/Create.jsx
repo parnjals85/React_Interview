@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import img from './create_img.png'
+import img from '../home/Opening_Img.png'
 
 export default function Create() {
   return (

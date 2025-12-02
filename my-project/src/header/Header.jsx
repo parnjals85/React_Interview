@@ -9,10 +9,9 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Create", link: "/create" },
-    { name: "Tips For Creation", link: "/tips" },
+    { name: "Tips For Creation", link: "/creation" },
     { name: "Ideas", link: "/ideas" },
     { name: "Explore", link: "/explore" },
-    { name: "Create Image", link: "/image" },
     { name: "Contact", link: "/contact" }
   ];
 

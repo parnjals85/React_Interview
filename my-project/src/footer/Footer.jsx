@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -38,8 +39,10 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-black mb-3">Quick Links</h3>
           <ul className="space-y-2 text-black text-sm">
-            <li className="hover:text-red-600 cursor-pointer">Home</li>
-            <li className="hover:text-red-600 cursor-pointer">Explore</li>
+            <Link to="/">
+            <li className="hover:text-red-600 cursor-pointer mb-2">Home</li>
+            </Link>
+            <li className="hover:text-red-600 cursor-pointer ">Explore</li>
             <li className="hover:text-red-600 cursor-pointer">Ingredients</li>
             <li className="hover:text-red-600 cursor-pointer">Create Recipe</li>
           </ul>

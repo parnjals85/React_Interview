@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";   // usestate -- page UI dikhata
+// useeffect - 
 
 export default function Veg() {
   const [query, setQuery] = useState("veg");
